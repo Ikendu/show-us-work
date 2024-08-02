@@ -2,6 +2,7 @@ import DownIcon from "../assets/icons/DownIcon";
 import SearchIcon from "../assets/icons/SearchIcon";
 import first from "../assets/image/image-3.jpg";
 import second from "../assets/image/image-1.png";
+import GoodIcon from "../assets/icons/GoodIcon";
 
 const profiles = [
   {
@@ -42,10 +43,14 @@ export default function MainSection() {
       <div>
         <div className="flex py-10 gap-5 justify-between">
           {profiles.map((profile, idx) => (
-            <div key={idx} className="rounded-lg bg-slate-400 text-sm">
+            <div key={idx} className="rounded-lg bg-[#E3E2E2] text-sm">
               <div>{profile.Image}</div>
-              <div>{profile.name}</div>
-              <div>{profile.role}</div>
+              <div className="p-3">
+                <div className="font-bold flex gap-3 justify-between">
+                  {profile.name} <GoodIcon />
+                </div>
+                <div>{profile.role}</div>
+              </div>
             </div>
           ))}
         </div>
