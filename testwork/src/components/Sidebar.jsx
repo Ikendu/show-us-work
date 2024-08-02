@@ -50,9 +50,10 @@ export default function Sidebar() {
       <div className="flex flex-col pt-10 pb-10 ">
         {sidebarItems.map((item, idx) => (
           <div
+            key={idx}
             onMouseEnter={() => changeBackground(idx)}
             className={`flex gap-8 items-center p-4 pl-8 w-full  ${
-              selected == idx && ` bg-[#E3E2E2] font-bold`
+              selected == idx && ` bg-[#E3E2E2] font-bold cursor-pointer`
             }`}
           >
             <div className="">{item.Icon}</div>
