@@ -1,8 +1,8 @@
-export default function SettingIcon() {
+export default function SettingIcon({ size }) {
   return (
     <svg
-      width="44"
-      height="45"
+      width={size}
+      height={size}
       viewBox="0 0 44 45"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

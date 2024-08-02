@@ -1,8 +1,8 @@
-export default function BellIcon() {
+export default function BellIcon({ size }) {
   return (
     <svg
-      width="44"
-      height="44"
+      width={size}
+      height={size}
       viewBox="0 0 44 44"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
