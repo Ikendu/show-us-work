@@ -1,4 +1,4 @@
-export default function GoodIcon() {
+export default function GoodIcon({ changeIcon }) {
   return (
     <svg
       width="16"

@@ -46,14 +46,14 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="bg-[#F2F2F2] h-screen ">
+    <div className="bg-[#F2F2F2] h-screen hidden md:block min-w-[320px] overflow-scroll flowing">
       <div className="flex flex-col pt-10 pb-10 ">
         {sidebarItems.map((item, idx) => (
           <div
             key={idx}
             onMouseEnter={() => changeBackground(idx)}
             className={`flex gap-8 items-center p-4 pl-8 w-full  ${
-              selected == idx && ` bg-[#E3E2E2] font-bold cursor-pointer`
+              selected == idx && ` bg-[#E3E2E2] font-bold cursor-pointer `
             }`}
           >
             <div className="">{item.Icon}</div>
