@@ -10,7 +10,7 @@ import VerifyIcon from "../assets/icons/VerifyIcon";
 import WalletIcon from "../assets/icons/WalletIcon";
 import aUser from "../assets/icons/user.svg";
 
-export default function Sidebar() {
+export default function Sidebar({ edith }) {
   const [selected, setSelected] = useState(0);
   const [changeIcon, setChangeIcon] = useState(`#494949`);
 
@@ -46,8 +46,14 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="bg-[#F2F2F2] h-screen hidden md:block min-w-[320px] overflow-scroll flowing">
-      <div className="flex flex-col pt-10 pb-10 ">
+    <div
+      className={`${edith ? ` bg-inherit` : `bg-[#F2F2F2] `} h-screen ${
+        edith
+          ? `inline-block md:hidden w-screen`
+          : `hidden md:block min-w-[320px]`
+      }   overflow-scroll flowing`}
+    >
+      <div className={` flex ${!edith && ` flex-col`}  pt-10 pb-10 `}>
         {sidebarItems.map((item, idx) => (
           <div
             key={idx}
@@ -57,10 +63,11 @@ export default function Sidebar() {
             }`}
           >
             <div className="">{item.Icon}</div>
-            <div>{item.name}</div>
-            {idx === 3 && ( // only apply to the notification
-              <div className="w-3 h-3 bg-[#FE534C] rounded-full "></div>
-            )}
+            {!edith && <div>{item.name}</div>}
+            {idx === 3 &&
+              !edith && ( // only apply to the notification
+                <div className="w-3 h-3 bg-[#FE534C] rounded-full "></div>
+              )}
           </div>
         ))}
         <div className="p-8">
