@@ -66,8 +66,8 @@ export default function SliderMobile() {
   };
 
   return (
-    <div className={``}>
-      <div className="items-center m-5">
+    <div className={`relative`}>
+      <div className="items-center m-5 ">
         <Slider {...settings}>
           {sidebarItems.map((item, idx) => (
             <div key={idx} onMouseEnter={() => changeBackground(idx)}>

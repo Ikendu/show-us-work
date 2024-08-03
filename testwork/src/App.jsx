@@ -14,7 +14,7 @@ function App() {
           <MainSection />
         </div>
       </div>
-      <div className="lg:hidden border-t-2 rounded-t-3xl bottom-0 z-20">
+      <div className="lg:hidden border-t-2 rounded-t-xl z-20">
         <SliderMobile />
       </div>
     </div>
