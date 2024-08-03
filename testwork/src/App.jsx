@@ -5,7 +5,7 @@ import SliderMobile from "./components/SliderMobile";
 
 function App() {
   return (
-    <div className="p-0 m-0 w-screen ">
+    <div className="p-0 m-0 w-screen relative">
       <div className=" grid grid-flow-col">
         <div className=" ">
           <Sidebar />
@@ -14,7 +14,7 @@ function App() {
           <MainSection />
         </div>
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden border-t-2 rounded-t-3xl bottom-0 z-20">
         <SliderMobile />
       </div>
     </div>
