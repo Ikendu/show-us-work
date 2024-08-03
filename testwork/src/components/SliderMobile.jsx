@@ -19,7 +19,7 @@ export default function SliderMobile() {
   const [changeIcon, setChangeIcon] = useState(`#494949`);
 
   const changeBackground = (id) => {
-    setSelected(id);
+    // setSelected(id);
     setChangeIcon(id);
   };
 
@@ -70,7 +70,7 @@ export default function SliderMobile() {
       <div className="items-center m-5">
         <Slider {...settings}>
           {sidebarItems.map((item, idx) => (
-            <div key={idx}>
+            <div key={idx} onMouseEnter={() => changeBackground(idx)}>
               <div className="cursor-pointer ">{item.Icon}</div>
             </div>
           ))}
