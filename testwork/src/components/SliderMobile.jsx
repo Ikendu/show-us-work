@@ -1,4 +1,8 @@
 import { useState } from "react";
+// for slider components
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 // all the needed asserts
 import BellIcon from "../assets/icons/BellIcon";
 import ExploreIcon from "../assets/icons/ExploreIcon";
@@ -9,9 +13,8 @@ import UserIcon from "../assets/icons/UserIcon";
 import UserPlusIcon from "../assets/icons/UserPlusIcon";
 import VerifyIcon from "../assets/icons/VerifyIcon";
 import WalletIcon from "../assets/icons/WalletIcon";
-import aUser from "../assets/icons/user.svg";
 
-export default function Sidebar({ edith }) {
+export default function SliderMobile() {
   const [selected, setSelected] = useState(0);
   const [changeIcon, setChangeIcon] = useState(`#494949`);
 
@@ -44,39 +47,34 @@ export default function Sidebar({ edith }) {
       name: `Settings`,
       Icon: <SettingIcon size={35} changeIcon={changeIcon} />,
     },
+    // {
+    //   name: `Logout`,
+    //   Icon:
+    // },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 3,
+  };
+
   return (
-    <div
-      className={`${edith ? ` bg-inherit` : `bg-[#F2F2F2] `} h-screen ${
-        edith
-          ? `inline-block md:hidden w-screen`
-          : `hidden md:block min-w-[320px]`
-      }   overflow-scroll flowing`}
-    >
-      <div className={` flex ${!edith && ` flex-col`}  pt-10 pb-10 `}>
-        {sidebarItems.map((item, idx) => (
-          <div
-            key={idx}
-            onMouseEnter={() => changeBackground(idx)}
-            className={`flex gap-8 items-center p-4 pl-8 w-full  ${
-              selected == idx && ` bg-[#E3E2E2] font-bold cursor-pointer `
-            }`}
-          >
-            <div className="">{item.Icon}</div>
-            {!edith && <div>{item.name}</div>}
-            {idx === 3 &&
-              !edith && ( // only apply to the notification
-                <div className="w-3 h-3 bg-[#FE534C] rounded-full "></div>
-              )}
-          </div>
-        ))}
-        <div className="p-8">
-          <button className=" bg-[#FA6C6C] flex gap-2 rounded-lg px-7 py-3 text-white text-lg ">
-            <LogoutIcon />
-            <p className="pr-1">Log Out</p>
+    <div className={``}>
+      <div className="items-center ">
+        <Slider {...settings}>
+          {sidebarItems.map((item, idx) => (
+            <div key={idx}>
+              <div className="mx-10 cursor-pointer">{item.Icon}</div>
+            </div>
+          ))}
+
+          <button className="text-center p-[5px] cursor-pointer  bg-[#FA6C6C] rounded-lg text-white ">
+            <p className="">Log Out</p>
           </button>
-        </div>
+        </Slider>
       </div>
     </div>
   );

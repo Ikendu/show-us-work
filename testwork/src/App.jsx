@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import MainSection from "./components/MainSection";
+import SliderMobile from "./components/SliderMobile";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <MainSection />
         </div>
       </div>
+      <SliderMobile />
     </div>
   );
 }
