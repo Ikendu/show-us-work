@@ -59,7 +59,7 @@ export default function SliderMobile() {
 
   const settings = {
     // dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 3,
