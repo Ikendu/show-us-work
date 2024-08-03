@@ -14,7 +14,9 @@ function App() {
           <MainSection />
         </div>
       </div>
-      <SliderMobile />
+      <div className="lg:hidden">
+        <SliderMobile />
+      </div>
     </div>
   );
 }

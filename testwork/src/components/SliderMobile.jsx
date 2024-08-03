@@ -47,10 +47,14 @@ export default function SliderMobile() {
       name: `Settings`,
       Icon: <SettingIcon size={35} changeIcon={changeIcon} />,
     },
-    // {
-    //   name: `Logout`,
-    //   Icon:
-    // },
+    {
+      name: `Logout`,
+      Icon: (
+        <button className="text-center p-[5px]  cursor-pointer  bg-[#FA6C6C] rounded-lg text-white ">
+          <p className="">Log Out</p>
+        </button>
+      ),
+    },
   ];
 
   const settings = {
@@ -63,17 +67,13 @@ export default function SliderMobile() {
 
   return (
     <div className={``}>
-      <div className="items-center ">
+      <div className="items-center m-5">
         <Slider {...settings}>
           {sidebarItems.map((item, idx) => (
             <div key={idx}>
-              <div className="mx-10 cursor-pointer">{item.Icon}</div>
+              <div className="cursor-pointer ">{item.Icon}</div>
             </div>
           ))}
-
-          <button className="text-center p-[5px] cursor-pointer  bg-[#FA6C6C] rounded-lg text-white ">
-            <p className="">Log Out</p>
-          </button>
         </Slider>
       </div>
     </div>

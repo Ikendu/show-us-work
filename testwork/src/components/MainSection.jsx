@@ -3,8 +3,6 @@ import SearchIcon from "../assets/icons/SearchIcon";
 import first from "../assets/image/image-3.jpg";
 import second from "../assets/image/image-1.png";
 import GoodIcon from "../assets/icons/GoodIcon";
-import Sidebar from "./Sidebar";
-import SliderMobile from "./SliderMobile";
 
 // let imageWidth = 100
 
